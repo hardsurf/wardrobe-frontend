@@ -1,4 +1,4 @@
-const API_URL = 'http://34.76.238.18:8080/';
+const API_URL = 'http://localhost:8080/';
 
 class Clothes {
     static hex2rgb(hexStr) {
@@ -48,17 +48,16 @@ async function getClothesTypes(fun) {
 }
 
 
-$(document).ready(function () {
-        let $seasons = $("#Company1");
-        getSeasons(function (seasonIds) {
+$(window).on('load', async function () {
+        let $seasons = $("#Company11");
+        await getSeasons(function (seasonIds) {
             seasonIds.forEach(id => $seasons.append(`<option value='${id}'>${id}</option>`));
         });
 
-        let $types = $("#Company");
-        getClothesTypes(function (typeIds) {
+        let $types = $("#Company22");
+        await getClothesTypes(function (typeIds) {
             typeIds.forEach(id => $types.append(`<option value='${id}'>${id}</option>`))
 
         });
-
     }
 );
