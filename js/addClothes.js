@@ -1,4 +1,4 @@
-const API_URL = 'http://34.76.238.18:8080/';
+const API_URL = 'http://localhost:8080/';
 
 class Clothes {
     static hex2rgb(hexStr) {
@@ -23,11 +23,21 @@ class Clothes {
 
 
 async function postItem(username, password, data) {
-    $.post({
-       url: API_URL + 'clothes/' + username,
+    $.ajax({
+        type: 'POST',
+        url: API_URL + 'clothes/' + username,
+        xhrFields: {
+            withCredentials: true
+        },
+        dataType: "json",
         username: username,
         password: password,
-       data: data
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (data) {alert(data);},
+        error: function (data) {
+            alert(data);
+        }
     });
 }
 
@@ -63,13 +73,16 @@ $(window).on('load', async function () {
         });
 
         $('#post-item').click(async function () {
-            let name = $('#POST-name').value;
-            let season = $("#Company11").value;
-            let type = $("#Company22").value;
-            let color = $("#Company33").value;
+            let name = $('#postname').val();
+            let season = $("#Company11").children("option:selected").val();
+            let type = $("#Company22").children("option:selected").val();
+            let color = $("#Company33").children("option:selected").val();
+
+            let lg = $("#lg").text();
+            let pw = $("#pw").text();
             await postItem(
-                $("#lg").value,
-                $("#pw").value,
+                lg,
+                pw,
                 new Clothes(name, color, season, type)
             );
         });
