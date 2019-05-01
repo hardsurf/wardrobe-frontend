@@ -43,6 +43,17 @@ function rgbToHex(rgb) {
     return "#" + componentToHex(rgb.red) + componentToHex(rgb.green) + componentToHex(rgb.blue);
 }
 
+$(document).ready(function () {
+    let wdw = window.location.href;
+    let lastIndex = wdw.lastIndexOf('?');
+    let pathParams = wdw.substring(lastIndex + 1);
+    history.pushState(null, '', wdw.substring(0, lastIndex));
+
+    let params = pathParams.split("&");
+    $('#lg').text(params[0].substring(params[0].indexOf('=') + 1));
+    $('#pw').text(params[1].substring(params[1].indexOf('=') + 1));
+});
+
 
 $(window).on('load', async function () {
     const username = $('#lg').text();
