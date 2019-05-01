@@ -1,0 +1,32 @@
+#bg{
+    position: absolute;
+    width: 100%;
+}
+.form{
+    position: relative;
+    margin: 0 auto;
+    width: 25%;
+    background: snow;
+    z-index: 10;
+    border-radius: 22px;
+}
+
+.pad{
+    padding: 180px;
+}
+
+.prop{
+    font-family: 'Poppins';
+    font-size: 1.3rem;
+    /*opacity: 0.8;*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.value{
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
