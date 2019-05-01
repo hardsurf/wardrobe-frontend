@@ -9,6 +9,10 @@ body{
     position: absolute;
     margin: 0;
 }
+#shafa{
+    position: absolute;
+    bottom: 40px;
+}
 
 .myrow{
     height: 100%;
