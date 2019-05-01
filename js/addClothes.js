@@ -22,9 +22,11 @@ class Clothes {
 }
 
 
-async function postItem(username, data) {
+async function postItem(username, password, data) {
     $.post({
        url: API_URL + 'clothes/' + username,
+        username: username,
+        password: password,
        data: data
     });
 }
@@ -58,6 +60,18 @@ $(window).on('load', async function () {
         await getClothesTypes(function (typeIds) {
             typeIds.forEach(id => $types.append(`<option value='${id}'>${id}</option>`))
 
+        });
+
+        $('#post-item').click(async function () {
+            let name = $('#POST-name').value;
+            let season = $("#Company11").value;
+            let type = $("#Company22").value;
+            let color = $("#Company33").value;
+            await postItem(
+                $("#lg").value,
+                $("#pw").value,
+                new Clothes(name, color, season, type)
+            );
         });
     }
 );
