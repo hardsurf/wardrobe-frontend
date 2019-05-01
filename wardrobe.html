@@ -4,53 +4,112 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="Bootstrap/js/bootstrap.js"></script>
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="media/css/style.css">
 
 </head>
 
 <body>
 <div class="container-fluid">
+<!--    <div class="form">-->
+
+
+<!--    <form action="" method="post">-->
+<!--        <label for="POST-name">Name:</label>-->
+<!--        <input id="POST-name" type="text" name="name"> <br>-->
+
+<!--        <div class="clearfix">-->
+<!--        <label for="POST-name" class="float-left">Type:</label>-->
+<!--        <div class="form-group float-left">-->
+<!--            <select id="Company" class="form-control" name="Company">-->
+<!--                <option value="small">Type1</option>-->
+<!--                <option value="medium">Type2</option>-->
+<!--                <option value="large">Type3</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        </div>-->
+
+<!--        <div class="clearfix">-->
+<!--            <label for="POST-name" class="float-left">Season:</label>-->
+<!--            <div class="form-group float-left">-->
+<!--                <select id="Company1" class="form-control" name="Company">-->
+<!--                    <option value="small">Season1</option>-->
+<!--                    <option value="medium">Season2</option>-->
+<!--                    <option value="large">Season3</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="clearfix">-->
+<!--            <label for="POST-name" class="float-left">Color:</label>-->
+<!--            <div class="form-group float-left">-->
+<!--                <select id="Company2" class="form-control" name="Company">-->
+<!--                    <option value="small">Color1</option>-->
+<!--                    <option value="medium">Color2</option>-->
+<!--                    <option value="large">Color3</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <input type="submit" value="Add">-->
+<!--        <input type="submit" value="Save">-->
+
+<!--    </form>-->
+
+
+
+<!--    </div>-->
+
+<div class="form">
     <form action="" method="post">
-        <label for="POST-name">Name:</label>
-        <input id="POST-name" type="text" name="name"> <br>
+        <table class="table table-borderless card-data">
+            <tbody>
+            <tr>
+                <th scope="row" class="prop">Name:</th>
+                <td class="value" id="card-num-table">
+                    <input id="POST-name" type="text" name="name"> <br>
+                </td>
+            </tr>
 
-        <div class="clearfix">
-        <label for="POST-name" class="float-left">Type:</label>
-        <div class="form-group float-left">
-            <select id="Company" class="form-control" name="Company">
-                <option value="small">Type1</option>
-                <option value="medium">Type2</option>
-                <option value="large">Type3</option>
-            </select>
-        </div>
-        </div>
+            <tr>
+                <th scope="row" class="prop">Season:</th>
+                <td class="value" id="card-num-table">
+                    <div class="form-group float-left">
+                    <select id="Company11" class="form-control" name="Company">
+                        <option value="small">Season1</option>
+                        <option value="medium">Season2</option>
+                        <option value="large">Season3</option>
+                    </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" class="prop">Type:</th>
+                <td class="value" id="surname-table">
+                    <div class="form-group float-left">
+                        <select id="Company22" class="form-control" name="Company">
+                            <option value="small">Type1</option>
+                            <option value="medium">Type2</option>
+                            <option value="large">Type3</option>
+                        </select>
+                    </div>
+                </td>
 
-        <div class="clearfix">
-            <label for="POST-name" class="float-left">Season:</label>
-            <div class="form-group float-left">
-                <select id="Company1" class="form-control" name="Company">
-                    <option value="small">Season1</option>
-                    <option value="medium">Season2</option>
-                    <option value="large">Season3</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="clearfix">
-            <label for="POST-name" class="float-left">Color:</label>
-            <div class="form-group float-left">
-                <select id="Company2" class="form-control" name="Company">
-                    <option value="small">Color1</option>
-                    <option value="medium">Color2</option>
-                    <option value="large">Color3</option>
-                </select>
-            </div>
-        </div>
-
-
+            </tr>
+            <tr>
+                <th scope="row" class="prop">Color:</th>
+                <td class="value">
+                    <div class="form-group float-left">
+                        <select id="Company33" class="form-control" name="Company">
+                            <option value="small">Color1</option>
+                            <option value="medium">Color2</option>
+                            <option value="large">Color3</option>
+                        </select>
+                    </div></td>
+            </tr>
+            </tbody>
+        </table>
     </form>
-        <input type="submit" value="Add">
-        <input type="submit" value="Save">
-    </form>
+</div>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 

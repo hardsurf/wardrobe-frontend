@@ -54,6 +54,27 @@ padding: 0;
     top: 30%;
     right: 2%;
 }
+.form{
+    width: 30%;
+    background: silver;
+}
+
+.prop{
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    opacity: 0.8;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.value{
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 /*.unit:hover{*/
 /*    stroke: #646464;*/
