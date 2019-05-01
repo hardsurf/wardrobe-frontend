@@ -34,10 +34,7 @@ async function postItem(username, password, data) {
         password: password,
         contentType: 'application/json',
         data: JSON.stringify(data),
-        success: function (data) {alert(data);},
-        error: function (data) {
-            alert(data);
-        }
+        success: function (data) {}
     });
 }
 
