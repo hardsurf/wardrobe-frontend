@@ -37,7 +37,7 @@ $(window).on('load', function () {
                 "password": text3
             }),
             contentType: 'application/json',
-            complete : function() {
+            success : function() {
               document.location.href = `wardrobe.html?email=${text2}&password=${text3}`;
             },
             dataType: "json"
