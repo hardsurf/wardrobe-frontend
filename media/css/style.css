@@ -26,6 +26,12 @@ body{
     position: absolute;
     bottom: 10%;
     left: 25%;
+
+}
+#addFromMain{
+    position: absolute;
+    bottom: 3%;
+    left: 25%;
 }
 .row-s-2{
     height:70%;
