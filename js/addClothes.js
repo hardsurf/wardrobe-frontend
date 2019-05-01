@@ -68,6 +68,7 @@ $(document).ready(function () {
 });
 
 $(window).on('load', async function () {
+
         let $seasons = $("#Company11");
         await getSeasons(function (seasonIds) {
             seasonIds.forEach(id => $seasons.append(`<option value='${id}'>${id}</option>`));
@@ -79,19 +80,31 @@ $(window).on('load', async function () {
 
         });
 
-        $('#post-item').click(async function () {
-            let name = $('#postname').val();
+        $("#additem").submit(function () {
+            return false;
+        });
+
+        $('#add').click(async function () {
+            let name = $('#POST-name').val();
             let season = $("#Company11").children("option:selected").val();
             let type = $("#Company22").children("option:selected").val();
             let color = $("#Company33").children("option:selected").val();
 
             let lg = $("#lg").text();
             let pw = $("#pw").text();
+
             await postItem(
                 lg,
                 pw,
                 new Clothes(name, color, season, type)
             );
         });
+
+        $("#save").click(async function () {
+            let lg = $("#lg").text();
+            let pw = $("#pw").text();
+
+            document.location = `index.html?u=${lg}&p=${pw}`;
+        })
     }
 );

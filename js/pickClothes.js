@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/';
+const API_URL = 'http://34.76.238.18:8080/';
 
 async function allWardrobe(username, password, fun) {
     $.ajax({

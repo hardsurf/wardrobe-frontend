@@ -9,7 +9,7 @@ $(window).on('load', function () {
 
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/users/" + text2,
+            url: "http://34.76.238.18:8080/users/" + text2,
             xhrFields: {
               withCredentials: true
             },
@@ -30,7 +30,7 @@ $(window).on('load', function () {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/signup",
+            url: "http://34.76.238.18:8080/signup",
             data: JSON.stringify({
                 "nickName": text1,
                 "email": text2,
