@@ -24,7 +24,8 @@ body{
 
 #pic{
     position: absolute;
-    bottom: 20px;
+    bottom: 10%;
+    left: 25%;
 }
 .row-s-2{
     height:70%;
@@ -68,5 +69,31 @@ padding: 0;
 /*    stroke-linejoin: round;*/
 /*}*/
 
-
-
+.button {
+    background-color:orangered;
+    width: 180px;
+    padding: 4px 0;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 3px;
+}
+.button p {
+    font-family: 'Roboto';
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    user-select: none;
+}
+.button:hover {
+    cursor: pointer;
+}
+.button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    border-radius: 50%;
+    background-color:yellow;
+    opacity: 0.4;
+    bottom: -30px;
+}
