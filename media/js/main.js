@@ -1,4 +1,4 @@
 
 // function setRandomColor() {
-//     $("#t_shirt").css("display", "none");
+//     $(".unit").css("display", "true");
 // }
