@@ -1,11 +1,15 @@
-const API_URL = 'http://34.76.238.18:8080/';
+const API_URL = 'http://localhost:8080/';
 
 async function allWardrobe(username, password, fun) {
+    let token = btoa(`${username}:${password}`);
     $.ajax({
         type: 'GET',
         url: API_URL + 'clothes/' + username,
         xhrFields: {
             withCredentials: true
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', 'Basic ' + token);
         },
         dataType: "json",
         username: username,
@@ -18,11 +22,15 @@ async function allWardrobe(username, password, fun) {
 }
 
 async function pickClothes(username, password, fun) {
+    let token = btoa(`${username}:${password}`);
     $.ajax({
         type: 'GET',
         url: API_URL + 'clothes/' + username + '/generate/Lviv',
         xhrFields: {
             withCredentials: true
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', 'Basic ' + token);
         },
         dataType: "json",
         username: username,
@@ -64,10 +72,16 @@ $(window).on('load', async function () {
             $(".unit").css('display', 'none');
 
             data.forEach(item => {
-                let $item = $(`#${item.icon}`);
-                $item.css('display', 'true');
+                let $item = $(`#${item.type.icon}`);
+                $item.css('display', 'block');
                 $item.css('fill', rgbToHex(item.color));
             });
         })
     });
+
+    $('#addFromMain').click(async function () {
+        const username = $('#lg').text();
+        const password = $('#pw').text();
+        document.location.href = `wardrobe.html?email=${username}&password=${password}`;
+    })
 });

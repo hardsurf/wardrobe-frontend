@@ -1,16 +1,13 @@
-const API_URL = 'http://34.76.238.18:8080/';
+const API_URL = 'http://localhost:8080/';
 
 class Clothes {
-    static hex2rgb(hexStr) {
-        const hex = parseInt(hexStr.substring(1), 16);
-        const r = (hex & 0xff0000) >> 16;
-        const g = (hex & 0x00ff00) >> 8;
-        const b = hex & 0x0000ff;
-        return {
-            red: r,
-            green: g,
-            blue: b
-        };
+    static hex2rgb(hex) {
+        let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            red: parseInt(result[1], 16),
+            green: parseInt(result[2], 16),
+            blue: parseInt(result[3], 16)
+        } : null;
     }
 
     constructor(name, color, season, type) {
@@ -23,18 +20,24 @@ class Clothes {
 
 
 async function postItem(username, password, data) {
+    let token = btoa(`${username}:${password}`);
     $.ajax({
         type: 'POST',
         url: API_URL + 'clothes/' + username,
         xhrFields: {
             withCredentials: true
         },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', 'Basic ' + token);
+        },
         dataType: "json",
         username: username,
         password: password,
         contentType: 'application/json',
         data: JSON.stringify(data),
-        success: function (data) {}
+        complete: function () {
+            $('#POST-name').val('');
+        }
     });
 }
 

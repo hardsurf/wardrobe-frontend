@@ -1,4 +1,4 @@
-const API_URL = 'http://34.76.238.18:8080/';
+const API_URL = 'http://localhost:8080/';
 
 $(window).on('load', function () {
 
@@ -9,7 +9,7 @@ $(window).on('load', function () {
 
         $.ajax({
             type: "GET",
-            url: "http://34.76.238.18:8080/users/" + text2,
+            url: API_URL + 'users/' + text2,
             xhrFields: {
               withCredentials: true
             },
@@ -30,14 +30,14 @@ $(window).on('load', function () {
 
         $.ajax({
             type: "POST",
-            url: "http://34.76.238.18:8080/signup",
+            url: API_URL + 'signup',
             data: JSON.stringify({
                 "nickName": text1,
                 "email": text2,
                 "password": text3
             }),
             contentType: 'application/json',
-            success : function() {
+            complete : function() {
               document.location.href = `wardrobe.html?email=${text2}&password=${text3}`;
             },
             dataType: "json"
